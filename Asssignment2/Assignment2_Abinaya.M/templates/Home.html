@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home pag</title>
+  
+</head>
+<h1 data-text="WELCOME !">WELCOME !</h1>
+<body class="g body">
+    
+    <style>
+
+h1
+{ 
+    margin-bottom: 100px;
+    margin-right: -1px;
+    text-align: center;
+  position: relative;
+  font-size: 3vw;
+  color: rgb(255, 253, 152);
+  -webkit-text-stroke: #e76ed3;
+
+}
+h1::before
+{
+    text-align: center;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #ff00aad7;
+  -webkit-text-stroke: 0vm #000000 ;
+  border-right: 2px solid #8ae76e;
+  overflow: hidden;
+  animation: heading 5s linear infinite;
+}
+@keyframes heading
+{
+  0%, 10%, 100%
+  {
+    width: 0;
+  }
+  70%, 90%
+  {
+    width: 100%;
+  }
+}
+
+button{
+  margin-top: 5%;
+  width: 250px;
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ffffff; 
+  background-color: #3c1fe4; 
+  border-radius: 5px; 
+  cursor:pointer;
+}
+       
+body{
+    background: linear-gradient(-45deg, #e98d71, #e2cad3, #8de0ff, #95d688);
+    background-size: 400% 400%;
+    animation: gradient 12s ease infinite;
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+    </style>
+   
+    <center>
+    <a href="{{ url_for('team') }}" target="_blank">
+    <button class="button">About Us</button></a>
+    <br><br>
+    <a href="{{ url_for('signin') }}" target="_blank">
+    <button class="button">Sign in</button></a>
+</center>
+
+</body>
+</html>
